@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Professional Workspace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="logo">ProTasker</span>
+        <div>
+            <a href="stories.html">Read Stories</a>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Manage Your Tasks</h1>
+            <p id="welcome-msg"></p>
+        </header>
+
+        <div class="task-input-section glass-card">
+            <input type="text" id="task-desc" placeholder="What needs to be done?">
+            <input type="datetime-local" id="task-deadline">
+            <select id="task-category">
+                <option value="Daily">Daily</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <ul id="task-list"></ul>
+    </div>
+
+    <audio id="alarm-sound" loop>
+        <source src="https://www.soundjay.com/buttons/sounds/beep-01a.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProTasker | Ultimate Management Suite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="main-nav" class="hidden">
+        <div class="logo">JongKelly Todo website</div>
+        <div>
+            <div class="notification">
+  <span class="bell" onclick="toggleNotifications()">🔔</span>
+</div>
+            <button onclick="showPage('dashboard')" style="width:auto; background:transparent">Tasks</button>
+            <button onclick="showPage('stories')" style="width:auto; background:transparent">Library</button>
+            <button onclick="logout()" style="width:auto; background:var(--danger)">Logout</button>
+        </div>
+    </nav>
+
+    <section id="auth-section">
+        <div class="auth-box glass-card">
+            <h2 id="auth-title" style="margin-bottom: 1.5rem;">Create Account</h2>
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Enter Username" required>
+                <input type="password" id="password" placeholder="Enter Password" required>
+                <button type="submit" id="auth-submit">Sign Up</button>
+            </form>
+            <p id="toggle-auth" style="margin-top:1rem; font-size: 0.9rem; cursor:pointer; color: var(--text-dim);">
+                Already have an account? Login
+            </p>
+        </div>
+    </section>
+
+    <section id="dashboard-section" class="hidden">
+        <div class="container">
+            <header style="margin-bottom: 2rem;">
+                <h1>Professional Workspace</h1>
+                <p id="user-greeting" style="color: var(--text-dim)"></p>
+            </header>
+
+            <div class="task-grid">
+                <div class="glass-card">
+                    <h3>New Task</h3>
+                    <input type="text" id="task-name" placeholder="Task description...">
+                    <input type="datetime-local" id="task-time">
+                    <select id="task-period">
+                        <option value="Daily">Daily</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="Yearly">Yearly</option>
+                    </select>
+                    <button onclick="addTask()">Deploy Task</button>
+                </div>
+
+                <div id="task-container">
+                    <h3>Active Deadlines</h3>
+                    <div id="list-render" style="margin-top: 1rem;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stories-section" class="hidden">
+        <div class="container">
+            <div class="glass-card story-content">
+                <h2>The Clockmaker’s Secret</h2>
+                <p>A young girl works with an old clockmaker in a quiet town. She finds out his clocks can turn back time for a little while. At first, she fixes small mistakes, but soon she learns that changing the past can cause big problems. She has to choose: fix a mistake or protect the future.</p>
+                <br>
+                <h2>The Secret Treehouse</h2>
+                <p>Two siblings build a treehouse in the forest. One day, they discover a hidden door that leads to a magical world full of talking animals and adventures.</p>
+            </div>
+        </div>
+    </section>
+
+    <audio id="alarm-audio" loop preload="auto">
+        <source src="https://nx9864.your-storageshare.de/s/alarm-siren.mp3" type="audio/mpeg">
+        <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
